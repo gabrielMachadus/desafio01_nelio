@@ -10,16 +10,16 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class OrderService {
+    @Autowired
+    private ShippingService shippingService;
 
-    ShippingService entrega;
-
-    public OrderService(ShippingService entrega) {
-        this.entrega = entrega;
+    public OrderService(ShippingService shippingService) {
+        this.shippingService = shippingService;
     }
 
     public double total(Order order){
         double discountValue = order.getBasic() * (order.getDiscount() / 100);
-        double shipment = entrega.shipment(order);
+        double shipment = shippingService.shipment(order);
         return (order.getBasic() - discountValue) + shipment;
     }
 }

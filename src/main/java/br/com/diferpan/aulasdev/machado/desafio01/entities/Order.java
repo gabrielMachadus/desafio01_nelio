@@ -8,7 +8,7 @@ import lombok.*;
 @AllArgsConstructor
 @ToString
 public class Order {
- private Integer code;
- private Double basic;
- private Double discount;
+ private int code;
+ private double basic;
+ private double discount;
 }

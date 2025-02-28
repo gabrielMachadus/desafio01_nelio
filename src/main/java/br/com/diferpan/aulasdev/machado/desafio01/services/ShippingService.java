@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class ShippingService {
 
-    double shippingValue;
+    private double shippingValue;
 
 
     public double shipment(Order order){
